@@ -3,18 +3,21 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
+title: 'Kratos : Rebirth'
+subtitle: '一个可爱而现代的 Hexo 主题'
+description: '欢迎使用这个主题，希望能给您带来美好的体验。'
+keywords: 
+- hexo
+- theme
+- kratos-rebirth
+author: All contributors
+language: zh
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
-permalink: :year/:month/:day/:title/
+url: https://krt.moe
+permalink: posts/:title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -37,10 +40,13 @@ titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
-  exclude: ''
+  exclude: []
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
@@ -65,7 +71,7 @@ index_generator:
   order_by: -date
 
 # Category & Tag
-default_category: uncategorized
+default_category: 无家可归的文章君T-T
 category_map:
 tag_map:
 
@@ -97,6 +103,20 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: kratos-rebirth
+
+plugin:
+ - hexo-generator-feed
+ - hexo-generator-sitemap
+
+feed:
+ type: atom
+ path: atom.xml
+ limit: 20
+
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap_template.xml
+  rel: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
